@@ -9,13 +9,13 @@ public class ColorGridApp {
 		final int rows = 10;
 		final int cols = 10;
 
-		 final ColorGridDimensions dimensions = new ColorGridDimensions();
-		 dimensions.setRows(rows);
-		 dimensions.setColumns(cols);
-		 dimensions.setWidth(width);
-		 dimensions.setHeight(height);
-		
-		 final ColorGrid grid = new ColorGrid(dimensions);
+		final ColorGridDimensions dimensions = new ColorGridDimensions();
+		dimensions.setRows(rows);
+		dimensions.setColumns(cols);
+		dimensions.setWidth(width);
+		dimensions.setHeight(height);
+
+		final ColorGrid grid = new ColorGrid(dimensions);
 
 		final JFrame window = new JFrame();
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
