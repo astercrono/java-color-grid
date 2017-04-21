@@ -37,7 +37,6 @@ public class ColorGrid extends JPanel {
 
 	@Override
 	protected void paintComponent(Graphics g) {
-		System.out.println("painting grid");
 		super.paintComponent(g);
 
 		final int rows = dimensions.getRows();
@@ -50,6 +49,23 @@ public class ColorGrid extends JPanel {
 
 				g.setColor(block.getColor());
 				g.fillRect(point.getX(), point.getY(), block.getWidth(), block.getHeight());
+			}
+		}
+	}
+	
+	public void setCellColor(final int row, final int column, final Color color) {
+		blocks[row][column].setColor(color);
+	}
+	
+	public void setRowColors(final int row, final Color[] colors) {
+		final ColorBlock[] blocksInRow = blocks[row];
+		
+		for (int col = 0; col < blocksInRow.length; col++) {
+			if (col < colors.length) {
+				blocksInRow[col].setColor(colors[col]);
+			}
+			else {
+				break;
 			}
 		}
 	}
