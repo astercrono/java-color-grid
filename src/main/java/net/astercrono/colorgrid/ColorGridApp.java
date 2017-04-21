@@ -18,15 +18,6 @@ public class ColorGridApp {
 		dimensions.setHeight(height);
 
 		final ColorGrid grid = new ColorGrid(dimensions);
-		grid.setCellColor(0, 0, Color.BLACK);
-		grid.setCellColor(0, 1, Color.DARK_GRAY);
-		grid.setCellColor(0, 2, Color.BLUE);
-		grid.setCellColor(0, 3, Color.ORANGE);
-		grid.setCellColor(0, 4, Color.GREEN);
-		grid.setCellColor(0, 5, Color.PINK);
-		grid.setCellColor(0, 6, Color.ORANGE);
-		grid.setCellColor(0, 7, Color.GREEN);
-		grid.setCellColor(0, 8, Color.PINK);
 
 		final JFrame window = new JFrame();
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -35,7 +26,17 @@ public class ColorGridApp {
 		window.setVisible(true);
 
 		Thread.sleep(2000);
+		colorIndividualCells(grid);
+		grid.repaint();
 
+		Thread.sleep(2000);
+		colorSmallRow(grid);
+		
+		Thread.sleep(2000);
+		colorOversizedRow(grid);
+	}
+
+	private static void colorIndividualCells(final ColorGrid grid) {
 		grid.setCellColor(3, 0, Color.BLACK);
 		grid.setCellColor(3, 1, Color.DARK_GRAY);
 		grid.setCellColor(3, 2, Color.BLUE);
@@ -43,11 +44,17 @@ public class ColorGridApp {
 		grid.setCellColor(3, 4, Color.GREEN);
 		grid.setCellColor(3, 5, Color.PINK);
 		grid.repaint();
-
-		Thread.sleep(2000);
-
-		grid.setRowColors(7,
-				new Color[] { Color.MAGENTA, Color.GRAY, Color.BLUE, Color.YELLOW, Color.RED, Color.DARK_GRAY, Color.GRAY, Color.ORANGE });
+	}
+	
+	private static void colorSmallRow(final ColorGrid grid) {
+		grid.setRowColors(7, new Color[] { Color.MAGENTA, Color.GRAY, Color.BLUE, Color.YELLOW, Color.RED,
+				Color.DARK_GRAY, Color.GRAY, Color.ORANGE });
+		grid.repaint();
+	}
+	
+	private static void colorOversizedRow(final ColorGrid grid) {
+		grid.setRowColors(9, new Color[] { Color.MAGENTA, Color.GRAY, Color.BLUE, Color.YELLOW, Color.RED,
+				Color.DARK_GRAY, Color.GRAY, Color.ORANGE, Color.YELLOW, Color.RED, Color.YELLOW, Color.RED });
 		grid.repaint();
 	}
 }
