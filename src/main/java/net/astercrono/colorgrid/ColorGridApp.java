@@ -25,15 +25,10 @@ public class ColorGridApp {
 		window.add(grid);
 		window.setVisible(true);
 
-		Thread.sleep(2000);
 		colorIndividualCells(grid);
-		grid.repaint();
-
-		Thread.sleep(2000);
 		colorSmallRow(grid);
-		
-		Thread.sleep(2000);
 		colorOversizedRow(grid);
+		grid.repaint();
 	}
 
 	private static void colorIndividualCells(final ColorGrid grid) {
