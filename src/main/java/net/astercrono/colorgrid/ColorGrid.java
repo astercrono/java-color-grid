@@ -69,7 +69,7 @@ public class ColorGrid extends JPanel {
 			}
 		}
 	}
-
+	
 	public ColorGridDimensions getDimensions() {
 		return dimensions;
 	}
