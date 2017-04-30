@@ -4,7 +4,7 @@
 
 	<groupId>net.astercrono</groupId>
 	<artifactId>java-color-grid</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<packaging>jar</packaging>
 
 	<name>java-color-grid</name>
