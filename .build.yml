@@ -1,0 +1,10 @@
+image: debian/stable
+packages:
+  - openjdk-11-jdk
+  - maven
+sources:
+  - https://git.sr.ht/~astercrono/java-color-grid
+tasks:
+  - build: |
+      cd java-color-grid
+      mvn package
